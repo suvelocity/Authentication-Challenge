@@ -1,5 +1,5 @@
 const request = require('supertest');
-const server = require('../_clone-app/app.js');
+const server = require('../_clone-app/app');
 
 const originalPackageJSON = {
 scripts: {
