@@ -4,12 +4,11 @@ const server = require('../../_cloned-app/app');
 const originalPackageJSON = {
 scripts: {
     test: "node_modules/.bin/jest",
-    dev: "nodemon start.js",
-    start: "node start.js"
+    dev: "nodemon index.js",
+    start: ""
 },
 dependencies: {
     bcrypt: "^5.0.0",
-    dotenv: "^8.2.0",
     express: "^4.17.1",
     jsonwebtoken: "^8.5.1",
     morgan: "^1.10.0",
