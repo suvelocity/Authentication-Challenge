@@ -14,7 +14,7 @@ afterAll(async () => {
 })
 
 //authorized user can get info
-test('Authorized User Can Get Info', async () => {
+test('Authorized User Can Get Info', async (done) => {
 
     await request(server)
     .post('/users/register')
@@ -43,6 +43,7 @@ test('Authorized User Can Get Info', async () => {
     .get('/api/v1/information')
     
     expect(infoRes3.status).toBe(401)
+    done();
 })
 })
 

@@ -12,7 +12,7 @@ describe('Admin Tests', () => {
     afterAll(async () => {
         await server.close();
     })
-    test('Only Admin Can Get Users List', async () => {
+    test('Only Admin Can Get Users List', async (done) => {
         
         const adminLoginRes = await request(server)
         .post('/users/login')
@@ -35,6 +35,7 @@ describe('Admin Tests', () => {
         .expect(403 || 401)
 
         expect(getAllUsersNoAdminRes.body.length > 0).toBe(false)
+        done();
     }) 
 })
 

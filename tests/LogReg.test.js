@@ -27,17 +27,18 @@ describe('Register & Login Tests', () => {
     })
     
     // user register
-    test('User Can Register', async () => {
+    test('User Can Register', async (done) => {
         const { body : response } = await request(server)
         .post('/users/register')
         .send(userRegisterMock)
         .expect(201);
 
         expect(response.message).toBe("Register Success")
+        done();
     })
 
     // user login
-    test('User Can Login', async () => {
+    test('User Can Login', async (done) => {
         await request(server)
         .post('/users/register')
         .send(userLoginMock)
@@ -51,10 +52,11 @@ describe('Register & Login Tests', () => {
         expect(response.body.accessToken.length > 0).toBe(true)
         expect(response.body.refreshToken.length > 0).toBe(true)
         expect(response.body.userName).toBe(userLoginMock.name)
+        done()
     })  
 
     // user logout
-    test('User Can Logout', async () => {
+    test('User Can Logout', async (done) => {
         await request(server)
         .post('/users/register')
         .send(userLogoutMock)
@@ -71,5 +73,6 @@ describe('Register & Login Tests', () => {
         .expect(200)
         console.log(responseOut)
         expect(responseOut.message).toBe("User Logged Out Successfully")
+        done();
     })
 })

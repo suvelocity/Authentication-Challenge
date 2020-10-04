@@ -26,7 +26,7 @@ describe('PackageJSON tests', () => {
         await server.close();
     })
 
-    test('Verify Package.JSON file has not changed <strong>\!\!\!\!\!\!</strong>', async ()=>{
+    test('Verify Package.JSON file has not changed <strong>\!\!\!\!\!\!</strong>', async (done)=>{
         const testPackageJSON = require('../package.json')
         for (let i in originalPackageJSON){
             expect(obJize(originalPackageJSON[i])).toBe(obJize(testPackageJSON[i]))
@@ -34,6 +34,7 @@ describe('PackageJSON tests', () => {
                 expect(testPackageJSON[i].hasOwnProperty(prop)).toBe(true)
             }
         }
+        done();
     })
 })
 function obJize (obj) {
