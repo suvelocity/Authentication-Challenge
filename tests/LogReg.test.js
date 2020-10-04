@@ -1,6 +1,6 @@
 const { response } = require('express');
 const request = require('supertest');
-const server = require('../_clone-app/app.js');
+const server = require('.../_clone-app/app.js');
 
 //login logout and register tests
 const userRegisterMock = {

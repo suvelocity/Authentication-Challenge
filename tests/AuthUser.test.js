@@ -1,5 +1,5 @@
 const request = require('supertest');
-const server = require('../_clone-app/app/js');
+const server = require('.../_clone-app/app/js');
 
 // authorized user tests
 const userInfoMock = {
