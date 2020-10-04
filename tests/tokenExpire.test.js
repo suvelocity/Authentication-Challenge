@@ -1,6 +1,5 @@
 const request = require('supertest');
-const server = require('../app');
-
+const server = require('../../_cloned-app/app');
 const userMock = {
     name: 'test3',
     email: 'test3@test.com',

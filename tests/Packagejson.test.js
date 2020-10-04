@@ -1,4 +1,4 @@
-const server = require('../app');
+const server = require('../../_cloned-app/app');
 
 const originalPackageJSON = {
     scripts: {
