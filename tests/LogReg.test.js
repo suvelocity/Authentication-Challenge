@@ -71,7 +71,6 @@ describe('Register & Login Tests', () => {
         .post('/users/logout')
         .send({token : response.body.refreshToken})
         .expect(200)
-        console.log(responseOut)
         expect(responseOut.message).toBe("User Logged Out Successfully")
         done();
     })
